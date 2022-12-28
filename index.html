@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		body {
+			background-image: url(图片1.png);
+			font-size: 20px;
+		}
+
+		table {
+			width: 500px;
+			height: 100px;
+			margin: 200px auto;
+			font-size: 30px;
+		}
+		input,select{
+			font-size: 20px;
+		}
+	</style>
+	<body>
+		<table>
+			<tr>
+				<td align="center" colspan="2">
+					<h2>新用户注册信息</h2>
+				</td>
+			</tr>
+			<tr>
+				<td>用户名：</td>
+				<td>
+					<input type="text" id="user" style="height:30px;width:200px;" placeholder="请输入用户名"
+						onblur="myUser()">
+				</td>
+				<td>
+					<font color="yellow" id="user-tip"></font>
+				</td>
+
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td><input type="password" id="mima" style="height:30px;width:200px;" placeholder="请输入至少6位的密码"
+						onblur="myMima()"></td>
+				<td>
+					<font color="yellow" id="mima-tip"></font>
+				</td>
+			</tr>
+			<tr>
+				<td>性别：</td>
+				<td><input type="radio" name="sex" id="man" checked="checked">男
+					<input type="radio" name="sex" id="woman">女
+				</td>
+			</tr>
+			<tr>
+				<td>性格：</td>
+				<td><input type="checkbox" name="xin" id="qwe">积极乐观
+					<input type="checkbox" name="xin" id="asd">谦虚文雅
+					<input type="checkbox" name="xin" id="zxc">耿直认真
+					<input type="checkbox" name="xin" id="mlp">沉默好学
+				</td>
+			</tr>
+			<tr>
+				<td>简介：</td>
+				<td><input type="text" style="height:30px;width:200px;"></td>
+			</tr>
+			<tr>
+				<td>城市：</td>
+				<td><select name="guo" id="guo" style="width: 200px;height: 30px;">
+				<option value="0">成都</option>
+				<option value="1">上海</option>
+				<option value="2">北京</option>
+				<option value="3">武汉</option>
+				<option value="4">泸州</option>
+				<option value="5">广州</option>
+				</select></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="提交"></td>
+				<td><input type="reset" value="重置"></td>
+			</tr>
+		</table>
+		<script>
+			function myUser() {
+				var use = document.getElementById('user').value;
+				if (use == null || use == "") {
+					var tip1 = document.getElementById('user-tip');
+					tip1.innerHTML = "*用户名不能为空！";
+				} else {
+					var tip1 = document.getElementById('user-tip');
+					tip1.innerHTML = "<font color='green'>*用户名合法！</font>";
+				}
+			}
+
+			function myMima() {
+				var mima = document.getElementById('mima').value;
+				var tip2 = document.getElementById('mima-tip');
+				if (mima.length < 6 || mima == "") {
+					tip2.innerHTML = "*密码最少6位！"
+				} else {
+					tip2.innerHTML = "<font color='green'>*密码合法！</font>"
+				}
+			}
+		</script>
+	</body>
+</html>
